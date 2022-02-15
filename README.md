@@ -4,5 +4,4 @@
 
 ## Screenshots
 
-![This is an image](/assets/screenshoot_1.png)
-![This is an image](/assets/screenshoot_2.png)
+![](/assets/screenshoot_1.png)
