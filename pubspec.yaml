@@ -29,3 +29,4 @@ flutter:
   uses-material-design: true
   assets:
     - assets/words.txt
+    - assets/wordle_words.txt

@@ -16,7 +16,6 @@ import 'package:wordle/core/const/text_constants.dart';
 import 'package:wordle/core/data/data_singleton.dart';
 import 'package:wordle/core/data/enums/message_types.dart';
 import 'package:wordle/core/presentation/home/cubit/home_cubit.dart';
-import 'package:wordle/core/presentation/home/page/settings_page.dart';
 import 'package:wordle/core/presentation/home/widget/home_content.dart';
 
 class HomePage extends StatefulWidget {
@@ -59,20 +58,6 @@ class _HomePageState extends State<HomePage> {
                       });
                 },
                 child: const Icon(Icons.help_outline)),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 10.0),
-            child: GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const SettingsPage()),
-                );
-              },
-              child: const Icon(
-                Icons.settings,
-              ),
-            ),
           ),
         ],
         title: Text(
@@ -303,8 +288,8 @@ class _HomePageState extends State<HomePage> {
                 borderRadius: BorderRadius.all(Radius.circular(24.0)),
               ),
               backgroundColor: isWin
-                  ? ColorConstants.primaryGreenLight
-                  : ColorConstants.primaryRedLight,
+                  ? ColorConstants.darkGreyLight
+                  : ColorConstants.darkGreyLight,
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 40.0),
                 child: Column(
@@ -314,7 +299,11 @@ class _HomePageState extends State<HomePage> {
                       width: double.infinity,
                       child: Center(
                           child: Text(
-                        isWin ? TextConstants.youWin : TextConstants.youLose,
+                        isWin
+                            ? TextConstants.youWin
+                            : TextConstants.youLose +
+                                DataSingleton().secretWord +
+                                "'",
                         style: GoogleFonts.mulish(
                             fontSize: 32, fontWeight: FontWeight.w700),
                       )),

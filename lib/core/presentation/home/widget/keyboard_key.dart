@@ -7,7 +7,7 @@ import 'package:wordle/core/presentation/home/cubit/home_cubit.dart';
 
 class KeyboardKey extends StatelessWidget {
   const KeyboardKey(
-      {Key? key, this.color = Colors.black26, required this.keyboardKey})
+      {Key? key, this.color = Colors.black87, required this.keyboardKey})
       : super(key: key);
 
   final Color color;
